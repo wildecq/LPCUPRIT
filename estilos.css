@@ -1,0 +1,158 @@
+
+:root {
+  --rojo: #ad173e;
+  --rojo-oscuro: #86112f;
+  --rosa: #f8eef1;
+  --gris: #f3f3f5;
+  --texto: #25232a;
+  --blanco: #ffffff;
+  --borde: #e7dce0;
+  --sombra: 0 5px 18px rgba(30, 20, 25, .10);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  background: var(--gris);
+  line-height: 1.55;
+}
+a { color: inherit; }
+.site-header {
+  background: var(--blanco);
+  text-align: center;
+  padding: 22px 16px 17px;
+  border-bottom: 4px solid var(--rojo);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--rojo);
+  text-align: left;
+  margin-bottom: 10px;
+}
+.brand-mark {
+  width: 53px; height: 58px;
+  border: 3px solid var(--rojo);
+  border-radius: 4px 4px 20px 20px;
+  display: grid; place-items: center;
+  font-weight: 800; font-size: 15px;
+  line-height: 1;
+  position: relative;
+}
+.brand-mark::after {
+  content: "✦";
+  position: absolute;
+  bottom: 5px;
+  font-size: 19px;
+}
+.brand-name { font-weight: 800; font-size: 19px; line-height: 1.05; letter-spacing: .2px; }
+.brand-name small { display: block; font-size: 10px; text-align: right; margin-top: 5px; letter-spacing: .5px; }
+.site-header h1 {
+  color: var(--rojo);
+  font-size: clamp(20px, 3vw, 27px);
+  margin: 4px 0 1px;
+  font-weight: 800;
+}
+.site-header .course { margin: 0; font-size: 12px; letter-spacing: .5px; }
+.container { width: min(100% - 32px, 1000px); margin: 28px auto; }
+.panel {
+  background: var(--blanco);
+  border-radius: 13px;
+  padding: 24px;
+  box-shadow: var(--sombra);
+}
+.section-title {
+  color: var(--rojo);
+  font-size: 18px;
+  margin: 0 0 13px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #d52b56;
+}
+.members {
+  background: var(--rosa);
+  border-left: 4px solid var(--rojo);
+  border-radius: 8px;
+  padding: 13px 18px;
+  margin-bottom: 20px;
+}
+.members ul { margin: 0; padding-left: 20px; font-size: 13px; }
+.members li { padding: 2px 0; }
+.task-list { display: grid; gap: 12px; }
+.task-link {
+  display: flex; align-items: center; justify-content: space-between; gap: 15px;
+  background: var(--rojo); color: white; text-decoration: none;
+  border-radius: 8px; padding: 13px 15px;
+  font-weight: 700; font-size: 13px;
+  transition: transform .2s, background .2s, box-shadow .2s;
+}
+.task-link:hover { background: var(--rojo-oscuro); transform: translateY(-2px); box-shadow: 0 5px 12px #ad173e33; }
+.task-link span:last-child {
+  background: white; color: var(--rojo); border-radius: 5px;
+  padding: 7px 15px; white-space: nowrap;
+}
+.site-footer {
+  background: var(--rojo); color: white; text-align: center;
+  padding: 14px 12px; font-size: 12px; font-weight: 700;
+  margin-top: 34px;
+}
+.site-footer span { display: block; font-weight: 400; }
+.page-heading { text-align: center; margin: 0 0 22px; }
+.page-heading h2 { color: var(--rojo); margin: 0 0 4px; font-size: 24px; }
+.page-heading p { margin: 0; color: #666; font-size: 14px; }
+.back-link { display: inline-block; color: var(--rojo); text-decoration: none; font-weight: 700; margin-bottom: 16px; }
+.back-link:hover { text-decoration: underline; }
+.form-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.form-card {
+  background: #f1f5fa;
+  border: 1px solid #dce5ef;
+  border-radius: 10px;
+  padding: 18px;
+}
+.form-card h3 { color: var(--rojo); font-size: 17px; margin: 0 0 13px; }
+.form-table { width: 100%; border-collapse: separate; border-spacing: 0 9px; }
+.form-table td { vertical-align: middle; padding: 3px 5px; }
+.form-table td:first-child { width: 34%; font-weight: 700; font-size: 13px; }
+input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="date"], select, textarea {
+  width: 100%; border: 1px solid #cbd5e1; border-radius: 7px;
+  padding: 10px 11px; background: white; font: inherit; font-size: 14px;
+}
+input:focus, select:focus, textarea:focus { outline: 3px solid #ad173e22; border-color: var(--rojo); }
+.radio-list { display: grid; gap: 10px; margin: 8px 0 14px; }
+.radio-list label { display: flex; align-items: center; gap: 9px; font-size: 14px; }
+.radio-list input { accent-color: var(--rojo); }
+.helper { font-size: 12px; color: #666; margin: 5px 0 0; }
+.form-actions { text-align: center; margin: 22px 0 4px; }
+.btn {
+  display: inline-block; border: 0; border-radius: 7px; padding: 12px 25px;
+  background: var(--rojo); color: white; font-weight: 700; font-size: 14px;
+  cursor: pointer; text-decoration: none; transition: background .2s, transform .2s;
+}
+.btn:hover { background: var(--rojo-oscuro); transform: translateY(-1px); }
+.btn.secondary { background: #5e5960; }
+.notice { display: none; background: #eaf7ed; color: #216b34; border: 1px solid #b9e2c2; border-radius: 7px; padding: 11px 14px; margin-top: 15px; }
+.notice.show { display: block; }
+.data-table { width: 100%; border-collapse: collapse; margin: 14px 0 20px; }
+.data-table th, .data-table td { border: 1px solid #d8cbd0; padding: 11px 12px; text-align: left; }
+.data-table th { background: var(--rojo); color: white; }
+.data-table tr:nth-child(even) { background: #fbf3f6; }
+.table-form { max-width: 760px; margin: 0 auto; }
+.table-form td { padding: 8px; }
+.table-form td:first-child { width: 32%; font-weight: 700; }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 15px; }
+.gallery figure { margin: 0; border: 1px solid var(--borde); border-radius: 9px; overflow: hidden; background: white; }
+.gallery img { display: block; width: 100%; height: 150px; object-fit: cover; }
+.gallery figcaption { padding: 8px; font-size: 12px; text-align: center; font-weight: 700; }
+.small-note { font-size: 12px; color: #666; }
+@media (max-width: 700px) {
+  .form-layout { grid-template-columns: 1fr; }
+  .panel { padding: 18px; }
+  .gallery { grid-template-columns: 1fr; }
+  .gallery img { height: 190px; }
+  .form-table td { display: block; width: 100% !important; }
+  .form-table td:first-child { padding-bottom: 0; }
+  .task-link { align-items: flex-start; }
+}

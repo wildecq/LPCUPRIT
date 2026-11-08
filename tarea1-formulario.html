@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarea 1 | Formulario de pedido</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="brand" aria-label="Universidad Privada de Trujillo">
+    <div class="brand-name">UNIVERSIDAD PRIVADA DE TRUJILLO</div>
+  </div>
+  <h1>CURSO: PENSAMIENTO, LENGUAJE Y COGNICIÓN VISUAL</h1>
+</header>
+<main class="container">
+  <a class="back-link" href="index.html">← Volver al inicio</a>
+  <div class="page-heading">
+    <h2>FORMULARIO DE PEDIDO</h2>
+    <p>Registro de datos para realizar un pedido en línea</p>
+  </div>
+  <section class="panel">
+    <form id="pedidoForm">
+      <div class="form-layout">
+        <section class="form-card">
+          <h3>1. Datos personales</h3>
+          <table class="form-table">
+            <tr><td><label for="nombre">Nombre:</label></td><td><input id="nombre" name="nombre" type="text" placeholder="Ingrese su nombre" required></td></tr>
+            <tr><td><label for="apellido">Apellido:</label></td><td><input id="apellido" name="apellido" type="text" placeholder="Ingrese su apellido" required></td></tr>
+            <tr><td><label for="direccion">Dirección:</label></td><td><input id="direccion" name="direccion" type="text" placeholder="Calle, número y distrito" required></td></tr>
+            <tr><td><label for="correo">Correo:</label></td><td><input id="correo" name="correo" type="email" placeholder="ejemplo@correo.com" required></td></tr>
+            <tr>
+  <td><label for="telefono">Teléfono:</label></td>
+  <td><input id="telefono" name="telefono" type="tel" inputmode="numeric" maxlength="9" placeholder="999 999 999" pattern="[0-9]{9}" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 9);" required></td>
+</tr>
+          </table>
+        </section>
+        <section class="form-card">
+          <h3>2. Datos de pago</h3>
+          <label for="tarjeta"><strong>Número de tarjeta:</strong></label>
+          <input id="tarjeta" name="tarjeta" type="text" inputmode="numeric" maxlength="19" placeholder="0000 0000 0000 0000" pattern="[0-9 ]{13,19}" oninput="this.value = this.value.replace(/[^0-9 ]/g, '')" required>
+          
+          <p class="helper">Escriba los dígitos de su tarjeta (solo demostración académica).</p>
+          <h3 style="margin-top:20px">Seleccione su banco</h3>
+          <div class="radio-list">
+            <label><input type="radio" name="banco" value="Banco de la Nación" required> Banco de la Nación</label>
+            <label><input type="radio" name="banco" value="BCP"> Banco de Crédito del Perú (BCP)</label>
+            <label><input type="radio" name="banco" value="Interbank"> Interbank</label>
+            <label><input type="radio" name="banco" value="BBVA"> BBVA</label>
+          </div>
+          <label for="observacion"><strong>Observaciones (opcional):</strong></label>
+          <textarea id="observacion" name="observacion" rows="3" placeholder="Indicaciones adicionales..."></textarea>
+        </section>
+      </div>
+      <div class="form-actions">
+  <button class="btn" type="submit">REALIZAR PEDIDO</button>
+  <button class="btn btn-secondary" type="reset">LIMPIAR TODO</button>
+</div>
+      
+      <div id="mensaje" class="notice" role="status">¡Formulario validado! Esta es una demostración académica; no se ha realizado ningún cobro.</div>
+    </form>
+  </section>
+</main>
+<footer class="site-footer">UNIVERSIDAD PRIVADA DE TRUJILLO - UPRIT<span>Pensamiento, Lenguaje y Cognición Visual</span></footer>
+<script>
+document.getElementById('pedidoForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  if (this.reportValidity()) document.getElementById('mensaje').classList.add('show');
+});
+</script>
+</body>
+</html>

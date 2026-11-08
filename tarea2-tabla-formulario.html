@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarea 2 | Tabla y formulario</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="brand" aria-label="Universidad Privada de Trujillo">
+  
+    <div class="brand-name">UNIVERSIDAD PRIVADA DE TRUJILLO</div>
+  </div>
+  <h1>CURSO: PENSAMIENTO, LENGUAJE Y COGNICIÓN VISUAL</h1>
+</header>
+<main class="container">
+  <a class="back-link" href="index.html">← Volver al inicio</a>
+  <div class="page-heading">
+    <h2>FORMULARIO Y TABLA HTML</h2>
+    <p>Ejemplo de captura de datos organizado con filas y columnas</p>
+  </div>
+  <section class="panel">
+    <h2 class="section-title">REGISTRO DE PARTICIPANTE</h2>
+    <form id="registroForm" class="table-form">
+      <table class="data-table">
+        <tr><td><label for="rnombre">Nombres y apellidos</label></td><td><input id="rnombre" name="rnombre" type="text" placeholder="Ingrese sus nombres completos" required></td></tr>
+        <tr><td><label for="rdni">DNI</label></td><td><input id="rdni" name="rdni" type="text" inputmode="numeric" maxlength="8" pattern="[0-9]{8}" placeholder="8 dígitos" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 8);" required>
+        <tr><td><label for="remail">Correo electrónico</label></td><td><input id="remail" name="remail" type="email" placeholder="correo@ejemplo.com" required></td></tr>
+        <tr><td><label for="rcurso">Curso</label></td><td><select id="rcurso" name="rcurso" required><option value="">Seleccione un curso</option><option>Pensamiento, Lenguaje y Cognición Visual</option><option>Comunicación</option><option>Ofimática</option></select></td></tr>
+        <tr><td><label for="rcomentario">Comentario</label></td><td><textarea id="rcomentario" name="rcomentario" rows="3" placeholder="Escriba un comentario"></textarea></td></tr>
+      </table>
+      <div class="form-actions">
+    <button class="btn btn-submit" type="submit">REGISTRAR DATOS</button>
+    
+     <button class="btn btn-reset" type="reset">LIMPIAR DATOS</button>
+</div>
+      <div id="registroMensaje" class="notice" role="status">¡Registro completado correctamente en esta demostración!</div>
+    </form>
+    <h2 class="section-title" style="margin-top:28px">&nbsp;</h2>
+    
+    <h2 class="section-title" style="margin-top:28px">GALERÍA DE IMÁGENES</h2>
+    <p class="small-note">Selecciona una imagen para verla en tamaño completo.</p>
+    <div class="gallery">
+      <figure><a href="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=85" target="_blank" rel="noopener"><img src="IMAGENES/CAMPUS ESTUDIANTIL.png?auto=format&fit=crop&w=500&q=80" alt="Estudiantes en un campus universitario"></a><figcaption>Vida universitaria</figcaption></figure>
+      <figure><a href="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=85" target="_blank" rel="noopener"><img src="IMAGENES/BIBLIOTECA.png?auto=format&fit=crop&w=500&q=80" alt="Biblioteca universitaria"></a><figcaption>Biblioteca</figcaption></figure>
+      <figure><a href="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1200&q=85" target="_blank" rel="noopener"><img src="IMAGENES/FORMACION PROFESIONAL.png?auto=format&fit=crop&w=500&q=80" alt="Graduación universitaria"></a><figcaption>Formación profesional</figcaption></figure>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">UNIVERSIDAD PRIVADA DE TRUJILLO - UPRIT<span>Pensamiento, Lenguaje y Cognición Visual</span></footer>
+<script>
+document.getElementById('registroForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  if (this.reportValidity()) document.getElementById('registroMensaje').classList.add('show');
+});
+</script>
+</body>
+</html>
